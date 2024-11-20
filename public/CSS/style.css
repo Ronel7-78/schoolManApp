@@ -1,0 +1,44 @@
+
+.marge0{
+margin-top: 3rem;
+margin-bottom: 1rem;
+}
+
+.photoform0{
+    height: 4rem;
+    width: 4rem;
+}
+
+.listT:hover{
+    background-color: orange;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius:5px;
+    color:black;
+
+}
+
+i .iconeJ:hover {
+    color: rgb(17, 16, 16); /* Change la couleur de l'icône */
+}
+
+.profileU{
+    max-width: 540px;
+    box-shadow: #6d787e 3px 4px 1px;
+
+}
+
+.bordure1{
+    box-shadow: #6d787e 3px 4px 1px 1px;
+
+    border-radius: 3px;
+}
+
+.marge0{
+    margin-top:3rem;
+    margin-bottom:3rem;
+}
+
+.marge1{
+    margin-top:5rem
+}
