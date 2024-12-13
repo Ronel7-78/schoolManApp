@@ -3,7 +3,7 @@
 @section('pageFck')
     <title>Student's add Form</title>
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid my-5">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 bordure1 border border-secondary">
@@ -88,7 +88,48 @@
 
                                 </div>
 
-                                <div class="row my-2">
+                                <div class="row my-3">
+
+                                    <div class="col-md-3">
+                                       <label for="">
+                                            <b>Gender</b>
+                                       </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select name="gender" id="gender" class="form-control">
+                                            <option value="">Select Your gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+
+                                    @error('gender')
+                                        <div class="text text-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+
+                                </div>
+
+
+                              <!--   <div class="row my-2">
+                                    <div class="col-md-3">
+                                        <label for="">
+                                             <b>Picture :</b>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9 ">
+                                        <input type="file" accept="image/*"  class="form-control" id="photoE" name="photoE" value="{{ old('photoE') }}">
+                                    </div>
+
+                                    //@error('photoE')
+                                        <div class="text text-danger">
+                                            //{{ $message }}
+                                        </div>
+                                    //@enderror
+
+                                </div>-->
+                               <div class="row my-2">
                                     <div class="col-md-3">
                                         <label for="">
                                              <b>Contact:</b>
@@ -100,25 +141,7 @@
 
                                     @error('contactP')
                                         <div class="text text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-
-                                </div>
-
-                                <div class="row my-2">
-                                    <div class="col-md-3">
-                                        <label for="">
-                                             <b>Picture :</b>
-                                        </label>
-                                    </div>
-                                    <div class="col-md-9 ">
-                                        <input type="file" accept="" class="form-control" id="photoEl" name="photoEl" value="{{ old('photoEl') }}">
-                                    </div>
-
-                                    @error('photoEl')
-                                        <div class="text text-danger">
-                                            {{ $message }}
+                                           {{ $message }}
                                         </div>
                                     @enderror
 
@@ -128,6 +151,8 @@
 
                             <div class="col-md-6">
 
+
+
                                 <div class="row my-2">
                                     <div class="col-md-3">
                                         <label for="">
@@ -136,6 +161,7 @@
                                     </div>
                                     <div class="col-md-9 form-group">
                                         <select name="codeCl" id="codeCl" class="form-control" placeholder="choose the class">
+                                            <option value="">Select class</option>
                                             @foreach($classes as $classe)
                                                 <option value="{{ $classe->codeCl }}">{{ $classe->nomCl }}</option>
                                             @endforeach
@@ -151,27 +177,18 @@
                                 </div>
 
                                 <div class="row my-3">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                        <label for="">
-                                            <b>New</b>
+                                            <b>New / Old</b>
                                        </label>
                                     </div>
-                                    <div class="col-md-2 ">
-                                        <input type="radio" class="" id="newOld" name="newOld" value="New">
-
+                                    <div class="col-md-9">
+                                        <select name="newOld" id="newOld" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="New">New</option>
+                                            <option value="Old">Old</option>
+                                        </select>
                                     </div>
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-2">
-                                       <label for="">
-                                            <b>Old</b>
-                                       </label>
-                                    </div>
-                                    <div class="col-md-2 ">
-                                        <input type="radio" class="" id="newOld" name="newOld" value="Old" >
-                                    </div>
-                                    <div class="col-md-1"></div>
 
                                     @error('newOld')
                                         <div class="text text-danger">
@@ -184,11 +201,30 @@
                                 <div class="row my-2">
                                     <div class="col-md-3">
                                         <label for="">
-                                           <b>Bid :</b>
+                                           <b class="fs-6">Amount Due :</b>
                                         </label>
                                     </div>
                                     <div class="col-md-9 ">
-                                        <input type="number" class="form-control" id="montantVerse" name="montantVerse" placeholder="payement" value="{{ old('montantVerse') }}">
+                                        <input type="number" class="form-control" id="montantDue" name="montantDue" placeholder="Invoice payment" value="{{ old('montantDue') }}" >
+                                    </div>
+
+                                    @error('montantDue')
+                                        <div class="text text-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+
+                                </div>
+
+
+                                <div class="row my-2">
+                                    <div class="col-md-3">
+                                        <label for="">
+                                           <b>Deposit :</b>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9 ">
+                                        <input type="number" class="form-control" id="montantVerse" name="montantVerse" placeholder="payment made" value="{{ old('montantVerse') }}">
                                     </div>
 
                                     @error('montantVerse')
@@ -202,11 +238,11 @@
                                 <div class="row my-2">
                                     <div class="col-md-3">
                                         <label for="">
-                                           <b> Rest :</b>
+                                           <b> Balance :</b>
                                         </label>
                                     </div>
                                     <div class="col-md-9 ">
-                                        <input type="number" class="form-control" id="resteV" name="resteV" placeholder="Rest" value="{{ old('resteV') }}">
+                                        <input type="number" class="form-control" id="resteV" name="resteV" placeholder="Outstanding balance" value="{{ old('resteV') }}" >
                                     </div>
 
                                     @error('resteV')
@@ -217,23 +253,6 @@
 
                                 </div>
 
-                                <div class="row my-2">
-                                    <div class="col-md-3">
-                                        <label for="">
-                                            <b>Date Paid :</b>
-                                        </label>
-                                    </div>
-                                    <div class="col-md-9 ">
-                                        <input type="date" class="form-control" id="datePay" name="datePay" placeholder="Enter new Code Class" value="{{ old('datePay') }}">
-                                    </div>
-
-                                    @error('datePay')
-                                        <div class="text text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-
-                                </div>
 
                                 <div class="row my-2">
 
@@ -242,19 +261,33 @@
                             </div>
 
                             <center class="my-4">
-                                <button class="btn btn-secondary">
-                                    <b>Go Back </b>
-                                </button>
+                                <a href="{{ route('Student.home') }}" class="btn btn-secondary">
+                                    <b> <i class="far fa-arrow-alt-circle-left"></i> Go Back </b>
+                                </a>
                                 <button type="reset" class="btn btn-outline-danger mx-3">
-                                    <b>  Cancel </b>
+                                    <b> <i class="fas fa-times-circle"></i> Cancel </b>
                                 </button>
                                 <button type="submit" class="btn btn-outline-primary">
-                                    <b>  Save  </b>
+                                    <b> <i class="fas fa-save"></i> Save  </b>
                                 </button>
                             </center>
                         </div>
                     </form>
 
+                    <script>
+                        function updateMontantDue() {
+                            var select = document.getElementById("codeCl");
+                            var montantDue = select.options[select.selectedIndex].getAttribute('data-montant');
+                            document.getElementById("montantDue").value = montantDue;
+                             // Mise à jour automatique du champ Balance lors de la modification du montant versé
+                            var montantVerse = document.getElementById("montantVerse").value;
+                            if (montantDue && montantVerse) { document.getElementById("resteV").value = montantDue - montantVerse;
+
+                             } } // Ajouter un écouteur d'événement pour mettre à jour la balance en fonction des montants
+                            document.getElementById("montantVerse").addEventListener('input', function() { var montantDue = document.getElementById("montantDue").value;
+                            var montantVerse = this.value;
+                            if (montantDue && montantVerse) { document.getElementById("resteV").value = montantDue - montantVerse;} });
+                    </script>
             </div>
             <div class="col-md-2"></div>
         </div>

@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->file('photoE')->after('datePay');
+        Schema::table('sujets', function (Blueprint $table) {
+            $table->integer('montantDue')->after('nomCl');
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->dropColumn('photoE');
+        Schema::table('sujets', function (Blueprint $table) {
+            //
         });
     }
 };

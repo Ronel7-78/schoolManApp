@@ -69,7 +69,7 @@ class AdminController extends Controller
             $loginRequest->session()->regenerate();
 
             // retourne sur la page d'accueil de l'admin connecté avec bien évidement un message
-            return redirect()->intended( route('AccueilAdminstrateur'))->with('success', 'Welcome, you are connected ');
+            return redirect()->intended(route('AccueilAdminstrateur'))->with('success', 'Welcome, you are connected ');
        }else{
              // aucun élément trouvé
              return redirect()->back()->with('error', 'Email or password incorrect, please try again');

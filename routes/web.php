@@ -50,6 +50,15 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/Accueil',[StudentController::class, 'homeStudent' ])->name('Student.home');
         Route::get('/formA',[StudentController::class, 'formAddS'])->name('Student.form');
         Route::post('/createStudent', [StudentController::class, 'addStudent'])->name('Student.Registration');
+
+        //route pour afficher la liste d'élève par classe
+        Route::get('/classe/{codeCl}/students', [StudentController::class, 'showStudentsByClass'])->name('Student.showStudentsByClass');
+
+        //route pour afficher les cartes individuelles des élèves
+        Route::get('/show/{id}' ,[StudentController::class, 'showStudent'])->name('Student.show');
+
+        //imprimer le reçu de paiement de l'élève
+        Route::get('/print/{id}',[StudentController::class ,'printStudent'])->name('Student.printFacture');
     });
 
     // groupe de routes consernant les classe

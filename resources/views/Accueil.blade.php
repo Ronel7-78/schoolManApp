@@ -4,7 +4,7 @@
 {{-- celle-ci inclu la section dans laquelle notre code va s'afficher --}}
 @section('pageFck')
   <title>Accueil</title>
-    @if (session()->has('success'))
+    @if (session()->has('success')) 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

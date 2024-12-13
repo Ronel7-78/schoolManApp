@@ -24,6 +24,7 @@
                         <th>N°</th>
                         <th>Code Classe</th>
                         <th>Class Name</th>
+                        <th>School Fees</th>
                         <th>Action</th>
                     </thead>
                     @forelse ($classes as $index => $classe)
@@ -32,8 +33,9 @@
                                 <td><b> {{$index + 1 }}</b></td>
                                 <td> <b> {{$classe->codeCl}} </b></td>
                                 <td><b> {{$classe->nomCl}} </b></td>
+                                <td><b> {{$classe->montantDue}} F CFA</b></td>
                                 <td>
-                                    <a href="#" class="view border-right " title="Refresh" data-toggle="tooltip" > <b><i class="fa fa-info text-info "></i></b></a><span class="mx-1 text-secondary">|</span>
+                                    <a href="{{ route('Student.showStudentsByClass',['codeCl' => $classe->codeCl]) }}" class="view border-right " title="Show student list" data-toggle="tooltip" > <b><i class="fas fa-list-ol fs-6 text-info "></i></b></a><span class="mx-1 text-secondary">|</span>
                                     <button class="btn btn-white p-0"  onclick="confirmDelete()" title="Delete" data-toggle="tooltip"><b><i class="fa fa-trash text-danger"></i></b></button><span class="mx-2 text-secondary">|</span>
                                     <a  href="{{ route('Classes.edit', $classe->codeCl) }}" class="link-disable"class="edit" title="Edit" data-toggle="tooltip" scope="col"><b><i class="fa fa-edit text-primary"  ></i></b></a>
 
@@ -46,7 +48,7 @@
 
                             @empty
                             <tr >
-                                <td class="text-info"> <b>Aucune classe disponible</b> </td>
+                                <td class="text-info"> <b>No class available</b> </td>
                             </tr>
                         </tbody>
                     @endforelse

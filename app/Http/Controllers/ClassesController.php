@@ -35,6 +35,7 @@ class ClassesController extends Controller
         Classes::create([
             'codeCl' => $classRequest->get('codeCl'),
             'nomCl' => $classRequest->get('nomCl'),
+            'montantDue'=>$classRequest->get('montantDue')
         ]);
 
         return redirect(route('Classes.home'))->with('success', 'Classe create successfuly');
@@ -68,6 +69,7 @@ class ClassesController extends Controller
     {
         $classes->codeCl = $classRequest->codeCl;
         $classes->nomCl = $classRequest->nomCl;
+        $classes->montantDue = $classRequest->montantDue;
 
         $classes->save();
 
@@ -81,6 +83,6 @@ class ClassesController extends Controller
     {
         $classe->delete();
 
-        return redirect(route('Classes.home'))->with('success','Puff !! Class delete successfuly');
+        return redirect(route('Classes.home'))->with('success','Puff !! Class delete successfully');
     }
 }

@@ -24,6 +24,7 @@ class UpdateClassesRequest extends FormRequest
         return [
             'codeCl' =>'required|min: 2',
             'nomCl' =>'required|min: 5',
+            'montantDue'=>'required'
         ];
     }
 
@@ -34,6 +35,7 @@ class UpdateClassesRequest extends FormRequest
             'codeCl.min' => 'The code class must be at least 9 characters long',
             'nomCl.required' => 'The class name is required',
             'nomCl.min' => 'The class name must be at least 5 characters long',
+            'montantDue.required'=>'The school fees is required'
 
         ];
     }

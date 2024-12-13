@@ -26,13 +26,14 @@ class CreateStudentRequest extends FormRequest
             'prenomEl'=>'required|string|max:255',
             'dateNais'=>'required|date',
             'lieuNais'=>'required|string|max:255',
+            'gender'=>'required',
             'codeCl'=>'required|string|exists:sujets,codeCl',
             'contactP'=>'required|min:9',
             'newOld'=>'required',
+            'montantDue'=>'required|integer|exists:sujets,montantDue',
             'montantVerse'=>'required',
             'resteV'=>'required',
-            'datePay'=>'required|date',
-            'photoEl'=>'required'
+            //'photoE'=>'required|max:2048'
         ];
     }
 
@@ -45,11 +46,16 @@ class CreateStudentRequest extends FormRequest
                 'lieuNaiss.min' => ' The place of birth is required.',
                 'codeCl.required' => ' The class code address is required ',
                 'contactP.required'=>' This phone number of parent\'s is required ',
+                'gender.required'=>'The gender is required',
                 'newOld.required'=>'This chields is required',
+                'montantDue.required'=>'The school fees is required',
                 'montantVerse.required'=>'This chields is required',
                 'resteV.required' => 'The rest  is required',
-                'datePay.required' => 'The date of the payement is required',
-                'photoEl.required' => 'The picture of student is required'
+
+                //'photoE.required' => 'The picture of the student is required.',
+
+                //'photoE.max' => 'The image size must be less than 2MB.'
+
 
             ];
         }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçu de Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .page {
+            width: 21cm;
+            margin: 0 auto;
+            background: white;
+            padding: 2cm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2em;
+        }
+        .header-left, .header-right {
+            width: 33%;
+        }
+        .header-center {
+            width: 33%;
+            text-align: center;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        .title {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 2em 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2em;
+        }
+        .info {
+            width: 60%;
+        }
+        .table-container {
+            width: 40%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        .amount-paid { color: green; }
+        .amount-remaining { color: red; }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4em;
+        }
+        p {
+            margin: 0.5em 0;
+        }
+        .italic {
+            font-style: italic;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .page {
+                width: 100%;
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <p>République du Cameroun</p>
+                <p class="italic">Paix-Travail-Patrie</p>
+                <p>Ministère de l'enseignement Secondaire</p>
+                <p>Lycée de MOKOLO IV Bertoua</p>
+            </div>
+            <div class="header-center">
+                <img src="logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="header-right">
+                <p>Republic of Cameroon</p>
+                <p class="italic">Peace-Work-Fatherland</p>
+                <p>Ministry of Secondary Education</p>
+                <p>Govement High School MOKOLO IV Bertoua</p>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="title">Reçu de Paiement</div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="info">
+                <p><strong>Nom(s) & Prénom(s) :</strong> Lando Ronel</p>
+                <p><strong>Né(e) le :</strong> 2000-08-07 <strong>À</strong> Bertoua</p>
+                <p><strong>Classe :</strong> 6M2 <strong>Sexe :</strong> M</p>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Montant Due</th>
+                            <th>Montant versé</th>
+                            <th>Reste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>35000 F CFA</td>
+                            <td class="amount-paid">20000 F CFA</td>
+                            <td class="amount-remaining">15000 F CFA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <p><strong>L'Intendant(e)</strong></p>
+                <p>_________________</p>
+            </div>
+            <div>
+                <p><strong>Fait le :</strong> 2024-11-25</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

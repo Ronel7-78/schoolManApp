@@ -15,6 +15,7 @@ class Classes extends Model
        protected $fillable = [
         'codeCl', // Ajoutez cette ligne
         'nomCl', // Autres champs existants
+        'montantDue'
 
         // Ajoutez d'autres champs si nécessaire
     ];

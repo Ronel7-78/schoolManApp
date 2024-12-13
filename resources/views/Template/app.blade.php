@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <!-- Lien vers Bootstrap CSS -->
-    <link rel="icon" href="{{ asset('imagesP/javaScript-removebg-preview.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('imagesP/logo.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('Bootstrap5/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Bootstrap5/vendor/fonts/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Bootstrap5/sweetalert.min.css') }}">
@@ -27,7 +27,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary py-2"style="position:relative; background-color:#A9E4EE !important">
   <div class="container-fluid">
-    <img src="{{ asset('imagesP/javaScript-removebg-preview.png')}}" class=" rounded-circle mx-3" style="width:3rem; height:2rem;" title="Logo">
+    <img src="{{ asset('imagesP/logo.png')}}" class=" rounded-circle mx-3" style="width:3rem; height:2rem;" title="Logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

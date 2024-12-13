@@ -50,7 +50,25 @@
 
                     </div>
 
-                    <center class="my-2">
+                    <div class="row my-2">
+                        <div class="col-md-3">
+                            <label for="">
+                                <i class="fas fa-money-bill"></i>  <b>School fees:</b>
+                            </label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" id="montantDue" name="montantDue" placeholder=" Enter the academic costs " value="{{ old('montantDue') }}">
+                        </div>
+
+                        @error('montantDue')
+                            <div class="text text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <center class="my-3">
                         <button type="reset" class="btn btn-secondary mx-2">
                             <b>Cancel</b>
                         </button>

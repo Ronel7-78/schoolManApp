@@ -24,6 +24,7 @@ class StoreClassesRequest extends FormRequest
         return [
             'codeCl' =>'required|min: 2|unique:sujets,codeCl',
             'nomCl' =>'required|min: 5|unique:sujets,nomCl',
+            'montantDue' =>'required',
         ];
     }
 
@@ -36,6 +37,7 @@ class StoreClassesRequest extends FormRequest
             'nomCl.required' => 'The class name is required',
             'nomCl.min' => 'The class name must be at least 5 characters long',
             'nomCl.unique'=>'This class name is already exists, please choose a different one',
+            'montantDue.required'=>'The school fees is required'
         ];
     }
 }
