@@ -8,7 +8,7 @@
             <div class="col-md-6 card bordure1">
                 <a href="{{ route('Classes.home') }}" class="nav-link  mt-3">
                     <i class="mx-1 far fa-arrow-alt-circle-left"></i><b>Go Back</b>
-                </a>
+                </a> 
                 <center class="h5 mt-3"><i class="fas fa-file-signature text-success mx-1"></i><b> EDIT CLASS FORM </b></center>
                 <hr class="bg-primary">
                 <form action="{{route('Classes.update',$classe->codeCl)}}" method="post" enctype="multipart/form-data">
