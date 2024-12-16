@@ -1,145 +1,122 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Reçu de Paiement</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 0;
-        }
-        body {
-            margin: 2cm;
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2cm;
-        }
-        .header-left, .header-right {
-            width: 30%;
-        }
-        .header-center {
-            width: 30%;
-            text-align: center;
-        }
-        .logo {
-            width: 100px;
-            height: auto;
-        }
-        .title {
-            text-align: center;
-            font-size: 24px;
-            margin: 2cm 0;
-            text-transform: uppercase;
-        }
-        .content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2cm;
-        }
-        .student-info {
-            width: 60%;
-        }
-        .payment-table {
-            width: 35%;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: center;
-        }
-        .amount-due {
-            color: black;
-        }
-        .amount-paid {
-            color: green;
-        }
-        .amount-remaining {
-            color: red;
-        }
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 3cm;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .text-italic {
-            font-style: italic;
-        }
-        @media print {
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="header-left">
-            <p>République du Cameroun</p>
-            <p class="text-italic">Paix-Travail-Patrie</p>
-            <p>Ministère de l'enseignement Secondaire</p>
-            <p>Lycée de MOKOLO IV Bertoua</p>
-        </div>
-        <div class="header-center">
-            <img src="{{ asset('imagesP/logo.png') }}" alt="Logo" class="logo">
-        </div>
-        <div class="header-right">
-            <p>Republic of Cameroon</p>
-            <p class="text-italic">Peace-Work-Fatherland</p>
-            <p>Ministry of Secondary Education</p>
-            <p>Govement High School MOKOLO IV Bertoua</p>
-        </div>
-    </div>
+@extends('../Template/app')
 
-    <div class="title">
-        Reçu de Paiement
-    </div>
+@section('pageFck')
+<title> Profil {{$students->nomEl}} {{$students->prenomEl}}</title>
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 card bordure1 marge0">
+           <!--  //entete -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <center class="my-1">
+                            <b>Republique du Cameroun</b> <br>
+                            <small>
+                                <i><b>Paix-Travail-Patrie</b></i> <br>
+                            </small>
 
-    <div class="content">
-        <div class="student-info">
-            <p><strong>Nom(s) & Prénom(s) :</strong> {{$students->nomEl}}  {{$students->prenomEl}} </p>
-            <p><strong>Né(e) le :</strong>  {{$students->dateNais}}  <strong>À</strong> {{$students->lieuNais}}</p>
-            <p><strong>Classe :</strong> {{$students->codeCl}} <strong>Sexe :</strong> {{$students->gender}}</p>
-        </div>
-        <div class="payment-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Montant Due</th>
-                        <th>Montant versé</th>
-                        <th>Reste</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="amount-due">{{ $students->montantDue }} F CFA<</td>
-                        <td class="amount-paid">{{ $students->montantVerse }} F CFA</td>
-                        <td class="amount-remaining">{{ $students->resteV }} F CFA</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+                            <b>Ministère de l'enseignement Secondaire</b> <br>
+                            <b>Lycee de MOKOLO IV Bertoua</b> <br>
 
-    <div class="footer">
-        <div class="signature">
-            <p><strong>L'Intendant(e)</strong></p>
-            <p>_________________</p>
+                        </center>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <center class="mt-4">
+                            <div class="" >
+                                <img src="{{ asset('imagesP/logo.png')}}"
+                                class="card rounded-circle border-0" alt="" srcset="" style="height: 6rem; width:6.9rem ; margin-top:4rem">
+                            </div>
+                        </center>
+                    </div>
+
+                    <div class="col-md-4">
+                        <center class="my-1">
+                            <b>Republic of Cameroon</b> <br>
+                            <small>
+                                <i><b>Peace-Work-Fatherland</b></i> <br>
+                            </small>
+
+                            <b>Ministry of Secondary Education</b> <br>
+                            <b>Govement High School MOKOLO IV Bertoua</b> <br>
+
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <center  >
+                <i>
+                    <b class="h2 text-underline">RECU DE PAIEMENT</b>
+                </i>
+            </center>
+            <hr>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Nom(s) & Prénom(s) :</label> <b> {{$students->nomEl}}  {{$students->prenomEl}}</b>
+                        </div>
+                        <div class="form-group my-2">
+                            <label for="">Né(e) le :</label> <b> {{$students->dateNais}}  </b> <label for="">&nbsp; &nbsp; À &nbsp;</label> <b> {{$students->lieuNais}}</b>
+                        </div>
+                        <div class="form-group ">
+                          <label for="">Classe :</label> <b> &nbsp; &nbsp;{{$students->codeCl}}  </b>&nbsp; &nbsp;&nbsp; &nbsp;  <label for="">Sexe :</label> <b>&nbsp; &nbsp; {{$students->gender}}</b>
+                        </div>
+
+                       <!--  <div class="form-group my-2">
+
+                        </div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <table class="table  table-bordered table-sm fs-5 h-100 table-hover my-2 border p-2 border-2">
+                                <thead>
+                                    <tr>
+
+                                        <th>Montant Due</th>
+                                        <th>Montant versé</th>
+                                        <th>Reste</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td> <b>{{ $students->montantDue }} F CFA</b> </td>
+                                        <td> <b class="text-success">{{ $students->montantVerse }} F CFA</b> </td>
+                                        <td> <b class="text-danger">{{ $students->resteV }} F CFA</b> </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </center>
+                    </div>
+                    <hr>
+                    <div class="row mt-2 mb-5" >
+                        <div class="col-md-3">
+                            <center>
+                                <b> L'Intendant(e)</b>
+                                <hr class=" m-0 w-75 py-1 text-dark" style="font-weight: bold;  ">
+                            </center>
+                        </div>
+                        <div class="col-md-6"></div>
+                        <div class="col-md-3">
+                            <label for="">Fait le :</label> <i><b> &nbsp; &nbsp; &nbsp; {{$students->datePay}}</b></i>
+                            <hr class=" m-0 w-75 py-1 text-dark" style="font-weight: bold; float:right ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <a href="{{route('Student.printFacture')}}" class="btn btn-primary" > </a>
+            </center>
         </div>
-        <div class="date">
-            <p><strong>Fait le :</strong> {{$students->datePay}}</p>
-        </div>
+        <div class="col-md-2"></div>
     </div>
-</body>
-</html>
+</div>
+
+@endsection
